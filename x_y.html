@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+<h2>Outputting Mouse Clicks</h2>
+<button type="clear"> Clear List </button>
+<button type="remove_last"> Remove Last </button> <br>
+<img id="photo" src="Floorplan_cropped.JPG" alt ="Floorplan" height="500">
+
+</div>
+
+<br>
+<div id="text2">This is more text</div>
+
+<script>
+var points = [];
+  document.querySelector("img").addEventListener("click", 
+      	function(event) {
+    		
+
+    		
+			points.push(event.clientX + ", " + event.clientY);
+			console.log(points);
+  
+    		document.getElementById("text2").textContent = (event.clientX + ", " + event.clientY)
+
+
+    }
+   );
+   
+   document.querySelector("button[type='clear']").addEventListener("click", 
+      	function(event) {
+      		points = [];
+      		console.log(points)
+      	}
+      );
+
+    document.querySelector("button[type='remove_last']").addEventListener("click", 
+      	function(event) {
+      		points.pop();
+      		console.log(points)
+      	}
+      );		
+                                                  
+</script>
+
+</body>
+</html>
